@@ -1,8 +1,32 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Footer from './components/Footer';
 
 export default function Home() {
+  const imageCredits = [
+    {
+      name: "Shakespeare Tower",
+      credit: <>Photo by <a href="https://unsplash.com/@blackprojection" className="underline">Max Letek</a> on <a href="https://unsplash.com/photos/grey-ladder-4inn20RqF4k" className="underline">Unsplash</a></>
+    },
+    {
+      name: "Trellick Tower",
+      credit: <>Photo by <a href="https://unsplash.com/@theblowup" className="underline">the blowup</a> on <a href="https://unsplash.com/photos/brown-concrete-building-under-blue-sky-during-daytime-oIOLbe6A4Bs" className="underline">Unsplash</a></>
+    },
+    {
+      name: "Balfron Tower",
+      credit: <>By <a href="https://commons.wikimedia.org/wiki/User:Cianboy" className="underline">Cianboy</a> - Own work, <a href="https://creativecommons.org/licenses/by-sa/4.0" className="underline">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=37863765" className="underline">Wikimedia Commons</a></>
+    },
+    {
+      name: "Toast Rack",
+      credit: <>By <a href="https://commons.wikimedia.org/wiki/User:Cjc13" className="underline">Cjc13</a> - Own work, <a href="https://creativecommons.org/licenses/by-sa/3.0" className="underline">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=7315475" className="underline">Wikimedia Commons</a></>
+    },
+    {
+      name: "Creative Workspace",
+      credit: <>Photo by Brutal Bricks</>
+    }
+  ];
+
   return (
     <main className="min-h-screen bg-white text-black">
       {/* Hero Section */}
@@ -113,27 +137,7 @@ export default function Home() {
             <div className="w-12 h-px bg-white ml-4"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-px">
-            {/* First gallery item - Trellick Tower */}
-            <Link href="/studies/trellick-tower" className="block cursor-pointer">
-              <div className="relative h-[400px] border border-white/10 p-px mb-6 md:mb-0 transition-all duration-300 hover:border-white/30">
-                <div className="absolute inset-0 grid grid-cols-8 pointer-events-none z-10">
-                  {[...Array(8)].map((_, i) => (
-                    <div key={i} className="h-full border-r border-white/5"></div>
-                  ))}
-                </div>
-                <Image 
-                  src="/trellick-detail.jpg" 
-                  alt="Trellick Tower LEGO creation" 
-                  fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-xs tracking-wider">
-                  TRELLICK TOWER STUDY
-                </div>
-              </div>
-            </Link>
-            
-            {/* Second gallery item - Shakespeare Tower */}
+            {/* First gallery item - Shakespeare Tower (Coming Soon) */}
             <div className="relative h-[400px] border border-white/10 p-px mb-6 md:mb-0">
               <div className="absolute inset-0 grid grid-cols-8 pointer-events-none z-10">
                 {[...Array(8)].map((_, i) => (
@@ -156,40 +160,57 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Third gallery item - Barbican */}
-            <div className="relative h-[400px] border border-white/10 p-px">
-              <div className="absolute inset-0 grid grid-cols-8 pointer-events-none z-10">
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} className="h-full border-r border-white/5"></div>
-                ))}
-              </div>
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-20">
-                <div className="border border-white/30 px-6 py-3">
-                  <p className="font-bebas text-2xl tracking-wider text-white">COMING SOON</p>
+            {/* Second gallery item - Balfron Tower */}
+            <Link href="/studies/balfron-tower" className="block cursor-pointer">
+              <div className="relative h-[400px] border border-white/10 p-px mb-6 md:mb-0 transition-all duration-300 hover:border-white/30">
+                <div className="absolute inset-0 grid grid-cols-8 pointer-events-none z-10">
+                  {[...Array(8)].map((_, i) => (
+                    <div key={i} className="h-full border-r border-white/5"></div>
+                  ))}
+                </div>
+                <Image 
+                  src="/balfron-tower.jpg" 
+                  alt="Balfron Tower LEGO creation" 
+                  fill
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-xs tracking-wider">
+                  BALFRON TOWER STUDY
                 </div>
               </div>
-              <Image 
-                src="/barbican-detail.jpg" 
-                alt="Barbican Estate detail" 
-                fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-xs tracking-wider">
-                BARBICAN ESTATE STUDY
+            </Link>
+            
+            {/* Third gallery item - Toast Rack */}
+            <Link href="/studies/toast-rack" className="block cursor-pointer">
+              <div className="relative h-[400px] border border-white/10 p-px transition-all duration-300 hover:border-white/30">
+                <div className="absolute inset-0 grid grid-cols-8 pointer-events-none z-10">
+                  {[...Array(8)].map((_, i) => (
+                    <div key={i} className="h-full border-r border-white/5"></div>
+                  ))}
+                </div>
+                <Image 
+                  src="/toast-rack.jpg" 
+                  alt="Toast Rack LEGO creation" 
+                  fill
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2 text-xs tracking-wider">
+                  TOAST RACK STUDY
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div className="text-xs text-white/50 mt-4 text-right">
-            Images: Max Letek, the blowup & Leo Zoghaib via Unsplash
+            Images: Max Letek, the blowup, Cianboy (CC BY-SA 4.0) & Cjc13 (CC BY-SA 3.0)
           </div>
         </div>
       </section>
 
-      {/* Manifesto */}
+      {/* Our Brick Philosophy / Brutal Fun */}
       <section className="py-20 px-6 border-b border-black">
         <div className="max-w-4xl mx-auto">
           <div className="pl-8">
-            <h2 className="text-5xl font-bold tracking-tight mb-12">MANIFESTO</h2>
+            <h2 className="text-5xl font-bold tracking-tight mb-12">BRUTAL FUN</h2>
             <div className="text-xl leading-relaxed space-y-6 relative">
               <div className="absolute left-[-2.5rem] top-0 bottom-0 w-px bg-black/20"></div>
               <p className="border-t border-black/10 pt-6">
@@ -198,8 +219,26 @@ export default function Home() {
               <p className="border-t border-black/10 pt-6">
                 At Brutal Bricks, we believe these monumental concrete forms deserve celebration. Their bold geometries, textural qualities, and uncompromising presence represent an important architectural movement that continues to influence design today.
               </p>
+              
+              <div className="border-t border-black/10 pt-6">
+                <div className="relative h-[500px] border border-black mb-6">
+                  <Image 
+                    src="/messy-desk.jpg" 
+                    alt="Creative workspace with LEGO bricks and architectural sketches" 
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute bottom-0 right-0 bg-black text-white text-xs p-2">
+                    THE CREATIVE PROCESS
+                  </div>
+                </div>
+              </div>
+              
               <p className="border-t border-black/10 pt-6">
                 Through LEGO, we find a perfect medium to explore and interpret these structures—both are modular, both celebrate their materiality, and both challenge us to think about space in new ways.
+              </p>
+              <p className="border-t border-black/10 pt-6">
+                Beyond architectural exploration, we've discovered that LEGO is a powerful creative outlet that expands the mind. The process of translating complex brutalist forms into these small plastic bricks forces us to think differently about scale, proportion, and essential design elements—a wonderfully challenging exercise that brings joy through creative problem-solving.
               </p>
             </div>
           </div>
@@ -207,27 +246,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-black text-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 border-t border-white/20 pt-8">
-            <div className="md:col-span-4">
-              <p className="text-2xl font-bold tracking-tight">BRUTAL BRICKS</p>
-            </div>
-            <div className="md:col-span-4 md:border-l md:border-r border-white/20 md:px-4">
-              <p className="text-sm">© {new Date().getFullYear()}</p>
-            </div>
-            <div className="md:col-span-4 text-right">
-              <p className="text-sm tracking-wide">CELEBRATING BRUTALIST ARCHITECTURE THROUGH LEGO</p>
-            </div>
-          </div>
-          <div className="mt-8 pt-4 border-t border-white/10 text-xs text-white/50">
-            <p>Image Credits:</p>
-            <p className="mt-1">Shakespeare Tower: Photo by <a href="https://unsplash.com/@blackprojection" className="underline">Max Letek</a> on <a href="https://unsplash.com/photos/grey-ladder-4inn20RqF4k" className="underline">Unsplash</a></p>
-            <p className="mt-1">Trellick Tower: Photo by <a href="https://unsplash.com/@theblowup" className="underline">the blowup</a> on <a href="https://unsplash.com/photos/brown-concrete-building-under-blue-sky-during-daytime-oIOLbe6A4Bs" className="underline">Unsplash</a></p>
-            <p className="mt-1">Barbican Estate: Photo by <a href="https://unsplash.com/@leozog" className="underline">Leo Zoghaib</a> on <a href="https://unsplash.com/photos/brown-and-white-concrete-building-TBhJiv9zP0o" className="underline">Unsplash</a></p>
-          </div>
-        </div>
-      </footer>
+      <Footer currentPage="home" imageCredits={imageCredits} />
     </main>
   );
 } 
