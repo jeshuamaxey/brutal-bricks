@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from "@vercel/analytics/react"
 import { Inter, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${bebasNeue.variable} bg-off-white font-sans`}>{children}</body>
+      <Analytics />
     </html>
   );
 } 
