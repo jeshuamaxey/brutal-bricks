@@ -16,6 +16,9 @@ module.exports = {
         sans: ['var(--font-inter)'],
         bebas: ['var(--font-bebas-neue)'],
       },
+      colors: {
+        'off-white': 'rgb(var(--off-white-rgb))',
+      },
     },
   },
   plugins: [],

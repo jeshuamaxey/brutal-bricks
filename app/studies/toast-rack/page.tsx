@@ -12,7 +12,7 @@ export default function ToastRackStudy() {
   ];
 
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="min-h-screen text-black">
       {/* Hero Section */}
       <div className="relative w-full h-[70vh] border-b border-black">
         <div className="absolute inset-0 grid grid-cols-12 pointer-events-none z-10">
